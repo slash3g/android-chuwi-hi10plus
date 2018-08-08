@@ -1,0 +1,7 @@
+install:
+    - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    - chmod a+x ~/bin/repo
+    - ~/bin/repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b cm-x86-14.1-r2
+    - ~/bin/repo sync --no-tags --no-clone-bundle
+script:
+    - make iso_img TARGET_PRODUCT=android_x86_64
